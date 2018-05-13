@@ -1,0 +1,7 @@
+*.swo
+*.swp
+
+config.json
+secrets/digitalocean_access_token
+secrets/id_rsa
+secrets/id_rsa.pub

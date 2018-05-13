@@ -1,0 +1,9 @@
+{
+  "digitalocean-access-token": "example",
+  "remote-ssh-public-key": "ssh-rsa etc...",
+  "remote-ssh-private-key": "-----BEGIN RSA PRIVATE KEY----- ...",
+  "vm-tags": ["dev"],
+  "projects": [
+    {"name": "vim-docker", "remote": "git@github.com:ditsara/vim-docker.git" }
+  ]
+}

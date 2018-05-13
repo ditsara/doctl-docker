@@ -1,0 +1,8 @@
+version: '2'
+services:
+  cli:
+    image: ditsara/doctl-docker:latest
+    build:
+      context: .
+    volumes:
+      - ./secrets:/root/secrets
