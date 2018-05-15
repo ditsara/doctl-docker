@@ -1,10 +1,20 @@
-#!/bin/sh
+#!/usr/bin/env ruby
 
 # run doctl with access token secret
-TOKEN=$(cat /root/secrets/digitalocean_access_token)
-if [ -z $TOKEN]; then
-  echo "No token found; should be in ~/secrets/digitalocean_access_token"
-  exit 1
-fi
+require 'util'
 
-doctl -t $TOKEN "$@"
+def main
+  t = Util.config["digitalocean-access-token"]
+  check_token_presence(t)
+
+  `doct -t #{t} "$@"`
+end
+
+def check_token_presence(t)
+  return true if t.present?
+  puts "No token found; should be set as \"digitalocean-access-token\" " \
+    "in config.json"
+  exit(false)
+end
+
+main

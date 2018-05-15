@@ -5,4 +5,4 @@ services:
     build:
       context: .
     volumes:
-      - ./secrets:/root/secrets
+      - ./config.json:/app/config.json

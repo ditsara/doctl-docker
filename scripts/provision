@@ -1,3 +1,21 @@
 #!/usr/bin/env ruby
 
 # provision a remote machine
+
+require 'util'
+
+def main
+  tags = Util.config['vm-tags']
+end
+
+def provision
+  Dir.mktmpdir do |dir|
+    # extract from config
+    File.write "#{dir}/id_rsa", config["remote-ssh-private-key"]
+    File.write "#{dir}/id_rsa.pub", config["remote-ssh-public-key"]
+
+    # transfer to server
+  end
+end
+
+main
